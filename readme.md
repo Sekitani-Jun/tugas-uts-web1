@@ -4,7 +4,7 @@ Aplikasi web frontend e-commerce toko buku interaktif yang dirancang menggunakan
 
 ---
 
-## 📁 Struktur File Proyek
+## Struktur File Proyek
 
 ```text
 ├── index.html            # Halaman landing page utama
@@ -28,7 +28,7 @@ Aplikasi web frontend e-commerce toko buku interaktif yang dirancang menggunakan
 
 ---
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
 1. **Autentikasi Pengguna & Sesi Lokal:**
    - Validasi login menggunakan data pengguna tersimpan.
@@ -52,7 +52,7 @@ Aplikasi web frontend e-commerce toko buku interaktif yang dirancang menggunakan
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - **HTML5:** Menggunakan tag semantik (`<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`) untuk aksesibilitas dan struktur dokumen yang bersih.
 - **CSS3:** Menggunakan CSS Grid & Flexbox, Google Fonts (*Poppins*), Custom Properties (`:root`), serta animasi keyframes (`slideDown`, `fade-transition`).
@@ -60,7 +60,7 @@ Aplikasi web frontend e-commerce toko buku interaktif yang dirancang menggunakan
 
 ---
 
-## ⚙️ Cara Menjalankan Proyek
+## Cara Menjalankan Proyek
 
 1. Unduh atau clone seluruh repositori file ke dalam satu folder lokal yang sama.
 2. Pastikan struktur folder `css/`, `js/`, dan `img/` berada sejajar dengan file-file `.html`.
