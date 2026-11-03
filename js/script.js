@@ -215,12 +215,12 @@ function initBukuBergerak() {
   // Jalankan fungsi pertama kali
   gantiBuku();
 
-  // Ulangi fungsi setiap 1 detik (1000 milidetik)
+  // Ulangi fungsi setiap 1 detik (5000 milidetik)
   intervalBuku = setInterval(gantiBuku, 5000);
 
   // [Opsional] Hentikan pergerakan saat di-hover agar mudah diklik
   showcaseEl.onmouseenter = () => clearInterval(intervalBuku);
-  showcaseEl.onmouseleave = () => (intervalBuku = setInterval(gantiBuku, 1000));
+  showcaseEl.onmouseleave = () => (intervalBuku = setInterval(gantiBuku, 5000));
 }
 
 // Fungsi membuka modal jika buku di-klik
