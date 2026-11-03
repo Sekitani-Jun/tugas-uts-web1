@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Toko Buku</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* CSS Internal */
+      .login-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .login-box {
+        background: white;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      .flex-between {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-wrap">
+      <div class="login-box">
+        <h2
+          style="text-align: center; color: var(--primary); margin-bottom: 2rem"
+        >
+          Login Pelanggan
+        </h2>
+        <form onsubmit="handleLogin(event)">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="email@contoh.com"
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            required
+            placeholder="••••••••"
+          />
+          <button type="submit" class="btn" style="width: 100%">Masuk</button>
+        </form>
+        <div class="flex-between">
+          <a
+            href="#"
+            onclick="openModal('modalLupa')"
+            style="color: var(--primary)"
+            >Lupa Password?</a
+          >
+          <a
+            href="#"
+            onclick="openModal('modalDaftar')"
+            style="color: var(--primary)"
+            >Daftar Baru</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Lupa Password -->
+    <div id="modalLupa" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalLupa')">&times;</span>
+        <h3>Reset Password</h3>
+        <p style="margin-top: 1rem; color: var(--text-muted)">
+          Silakan hubungi CS Toko Buku untuk reset sandi.
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal Daftar -->
+    <div id="modalDaftar" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalDaftar')">&times;</span>
+        <h3 style="margin-bottom: 1rem">Pendaftaran Pelanggan</h3>
+        <form onsubmit="handleRegister(event)">
+          <input type="text" id="regNama" required placeholder="Nama Lengkap" />
+          <input
+            type="email"
+            id="regEmail"
+            required
+            placeholder="Alamat Email"
+          />
+          <input
+            type="password"
+            id="regPassword"
+            required
+            placeholder="Buat Password"
+          />
+          <button type="submit" class="btn" style="width: 100%">
+            Daftar Sekarang
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

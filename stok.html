@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Buku</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="dashboard.html" class="logo" style="color: #000"
+        >Jun Bookstore</a
+      >
+      <nav>
+        <a href="dashboard.html">Beranda</a>
+        <a href="stok.html" class="active">Katalog Buku</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html">Lacak Paket</a>
+        <a href="#" onclick="handleLogout()">Keluar</a>
+      </nav>
+    </header>
+    <main>
+      <h2 style="margin-bottom: 1rem">Katalog Buku & Stok</h2>
+
+      <!-- Form Manipulasi DOM Baris Baru -->
+      <section class="card">
+        <h4>Tambah Daftar Buku (Admin)</h4>
+        <form
+          onsubmit="tambahBukuBaru(event)"
+          style="
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            align-items: center;
+          "
+        >
+          <input
+            type="text"
+            id="namaBuku"
+            required
+            placeholder="Judul Buku"
+            style="margin: 0"
+          />
+          <input
+            type="number"
+            id="hargaBuku"
+            required
+            placeholder="Harga (Rp)"
+            style="margin: 0"
+          />
+          <button type="submit" class="btn">Tambahkan ke Katalog</button>
+        </form>
+      </section>
+
+      <section class="card" style="overflow-x: auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode ISBN/SKU</th>
+              <th>Judul Buku</th>
+              <th>Harga</th>
+              <th>Ketersediaan</th>
+            </tr>
+          </thead>
+          <tbody id="tabelKatalog">
+            <!-- Javascript DOM merender daftar buku di sini -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

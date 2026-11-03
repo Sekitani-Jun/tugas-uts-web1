@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Toko</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .fade-transition {
+        transition: opacity 0.4s ease-in-out;
+      }
+
+      /* Layout khusus halaman dashboard baru */
+      .dash-layout {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 80vh;
+        position: relative;
+        padding: 0 5%;
+      }
+      .dash-text h1 {
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: #000;
+        line-height: 1.1;
+        margin-top: 0.5rem;
+      }
+      .dash-footer {
+        position: absolute;
+        bottom: 2rem;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+        font-weight: 500;
+      }
+      .dash-image-wrapper {
+        position: relative;
+        margin-right: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .gray-box {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background-color: #efefef;
+        top: 20%;
+        left: -40%;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body style="background-color: #ffffff">
+    <header
+      class="navbar"
+      style="box-shadow: none; border-bottom: 1px solid #eee"
+    >
+      <a href="dashboard.html" class="logo" style="color: #000"
+        >Jun Bookstore</a
+      >
+      <nav>
+        <a
+          href="dashboard.html"
+          class="active"
+          style="color: #000; font-weight: 600"
+          >Beranda</a
+        >
+        <a href="stok.html">Katalog Buku</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html">Lacak Paket</a>
+        <a
+          href="#"
+          onclick="handleLogout()"
+          class="btn-outline"
+          style="padding: 0.4rem 1rem; border-radius: 4px"
+          >Keluar</a
+        >
+      </nav>
+    </header>
+
+    <main class="dash-layout">
+      <!-- KOLOM KIRI: Teks Sambutan -->
+      <div class="dash-text">
+        <span
+          style="
+            color: #4338ca;
+            letter-spacing: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+          "
+          >W E L C O M E</span
+        >
+        <h1>Welcome,<br /><span id="greetingName">[nama user]</span></h1>
+      </div>
+
+      <div class="dash-footer">
+        <a
+          href="https://github.com/Sekitani-Jun"
+          target="_blank"
+          rel="noopener noreferrer"
+          >https://github.com/Sekitani-Jun</a
+        >
+      </div>
+
+      <!-- KOLOM KANAN: Showcase Buku Bergerak -->
+      <div class="dash-image-wrapper">
+        <div class="gray-box"></div>
+        <div
+          id="bookShowcase"
+          class="fade-transition"
+          style="cursor: pointer; position: relative; z-index: 1"
+          onclick="bukaDetailBuku()"
+        >
+          <!-- Gambar disuntikkan oleh JS -->
+        </div>
+        <p
+          style="
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #333;
+            z-index: 1;
+            font-weight: 500;
+          "
+        >
+          Klik untuk melihat Detail
+        </p>
+      </div>
+    </main>
+
+    <!-- Modal Detail Buku -->
+    <div id="modalDetailBuku" class="modal">
+      <div class="modal-content" style="max-width: 650px; padding: 2.5rem">
+        <span class="close" onclick="closeModal('modalDetailBuku')"
+          >&times;</span
+        >
+        <div id="isiDetailBuku"></div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

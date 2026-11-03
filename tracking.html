@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lacak Pesanan</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="dashboard.html" class="logo" style="color: #000"
+        >Jun Bookstore</a
+      >
+      <nav>
+        <a href="dashboard.html">Beranda</a>
+        <a href="stok.html">Katalog Buku</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html" class="active">Lacak Paket</a>
+        <a href="#" onclick="handleLogout()">Keluar</a>
+      </nav>
+    </header>
+    <main>
+      <section class="card" style="text-align: center">
+        <h2 style="margin-bottom: 1rem">Lacak Pengiriman Buku</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem">
+          Masukkan Nomor Resi / Delivery Order (contoh: 20230013)
+        </p>
+
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: auto;
+          "
+        >
+          <input
+            type="text"
+            id="inputDO"
+            placeholder="Nomor Resi / DO"
+            style="margin: 0; flex: 1"
+          />
+          <button class="btn" onclick="cariResi()">Cari Paket</button>
+        </div>
+      </section>
+
+      <!-- Hasil pencarian DOM (Progress Bar & Tabel/List) muncul di div ini -->
+      <div id="hasilTracking" style="max-width: 600px; margin: auto"></div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

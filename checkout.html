@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan & Keranjang Buku</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="dashboard.html" class="logo" style="color: #000"
+        >Jun Bookstore</a
+      >
+      <nav>
+        <a href="dashboard.html">Beranda</a>
+        <a href="stok.html">Katalog Buku</a>
+        <a href="checkout.html" class="active">Pemesanan</a>
+        <a href="tracking.html">Lacak Paket</a>
+        <a href="#" onclick="handleLogout()">Keluar</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2 style="margin-bottom: 2rem">Keranjang & Pembayaran Buku</h2>
+
+      <div
+        style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem"
+        id="checkoutLayout"
+      >
+        <!-- Kolom Kiri: Keranjang & Form Pengiriman -->
+        <section class="card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem">
+            Daftar Buku di Keranjang
+          </h3>
+
+          <!-- Fitur Tambah Buku ke Keranjang -->
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem">
+            <select id="pilihBukuTambah" style="margin-bottom: 0">
+              <!-- Opsi akan diisi otomatis oleh JS -->
+            </select>
+            <button type="button" class="btn" onclick="tambahItemKeKeranjang()">
+              Tambah Buku
+            </button>
+          </div>
+
+          <!-- Tabel Item Keranjang -->
+          <div style="overflow-x: auto">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Buku</th>
+                  <th>Harga</th>
+                  <th>Jumlah</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tabelKeranjang">
+                <!-- Dirender dinamis oleh JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <hr
+            style="
+              margin: 1.5rem 0;
+              border: none;
+              border-top: 1px solid var(--border);
+            "
+          />
+
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem">
+            Data Pengiriman
+          </h3>
+          <form id="formCheckout" onsubmit="prosesPembayaran(event)">
+            <label>Nama Penerima</label>
+            <input
+              type="text"
+              id="namaPenerima"
+              required
+              placeholder="Nama Lengkap"
+            />
+
+            <label>Alamat Pengiriman</label>
+            <input
+              type="text"
+              id="alamatPenerima"
+              required
+              placeholder="Alamat lengkap tujuan kurir"
+            />
+
+            <label>Metode Pembayaran</label>
+            <select id="metodeBayar" required>
+              <option value="">-- Pilih Pembayaran --</option>
+              <option value="Transfer Bank BCA">Transfer Bank BCA</option>
+              <option value="QRIS / E-Wallet">QRIS / E-Wallet</option>
+              <option value="COD (Bayar di Tempat)">
+                COD (Bayar di Tempat)
+              </option>
+            </select>
+
+            <button
+              type="submit"
+              class="btn"
+              style="width: 100%; margin-top: 1rem; background-color: #10b981"
+            >
+              Proses Pembayaran
+            </button>
+          </form>
+        </section>
+
+        <!-- Kolom Kanan: Ringkasan Total -->
+        <aside class="card" style="height: fit-content">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem">
+            Ringkasan Belanja
+          </h3>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 0.5rem;
+              color: var(--text-muted);
+            "
+          >
+            <span>Total Item</span><span id="summaryTotalItem">0 Buku</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 0.5rem;
+              color: var(--text-muted);
+            "
+          >
+            <span>Subtotal</span><span id="summarySubtotal">Rp 0</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 1.5rem;
+              color: var(--text-muted);
+            "
+          >
+            <span>Ongkir</span><span>Rp 15.000</span>
+          </div>
+          <hr style="margin: 1rem 0; border-top: 1px solid var(--border)" />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-weight: bold;
+              font-size: 1.1rem;
+              color: var(--primary);
+            "
+          >
+            <span>Total Tagihan</span
+            ><span id="summaryTotalTagihan">Rp 15.000</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Area Struk Pembayaran (Awalnya disembunyikan, muncul saat tombol proses ditekan) -->
+      <div
+        id="areaStruk"
+        style="display: none; max-width: 600px; margin: 0 auto"
+      >
+        <!-- Struk dirender via JS -->
+      </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
