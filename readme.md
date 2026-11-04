@@ -1,4 +1,5 @@
 # Jun's Bookstore (Frontend Web Application)
+link youtube: https://youtu.be/GOURq-pl-LY
 
 Aplikasi web frontend e-commerce toko buku interaktif yang dirancang menggunakan **HTML Semantik**, **CSS Modern (Modular/Variables)**, dan **JavaScript (DOM Manipulation & LocalStorage)**. Proyek ini dikembangkan dengan pendekatan *Single-Page Application (SPA) feel* melalui navigasi antar halaman, manajemen keranjang belanja interaktif, sistem autentikasi pengguna lokal, katalog buku dinamis, serta simulasi pelacakan pengiriman (tracking).
 
